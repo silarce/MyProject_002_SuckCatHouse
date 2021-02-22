@@ -1,0 +1,5 @@
+這個檔案是原本的檔案
+外面的檔案刪掉了最底下的//# sourceMappingURL=popper.min.js.map
+因為這會造成錯誤訊息
+
+DevTools failed to load SourceMap: Could not load content for http://127.0.0.1:5500/%E9%98%BF%E5%B7%9D%E7%9A%84%E5%B0%88%E6%A1%88/%E5%B0%88%E6%A1%88_%E9%98%BF%E8%B2%93%E9%98%BF%E7%8B%97_v1/frames/popper.min.js.map: HTTP error: status code 404, net::ERR_HTTP_RESPONSE_CODE_FAILURE

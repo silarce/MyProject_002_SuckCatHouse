@@ -1,32 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./frames/jQuery/jquery.min.js">
+    <link rel="stylesheet" href="./frames/popper.min.js">
+    <link rel="stylesheet" href="./frames/bootstrap/_js/bootstrap.min.js">
+    <link rel="stylesheet" href="./frames/bootstrap/_css/bootstrap.min.css">
 
     <style>
-        #navBar{
-            width: 100%;
-            height: 100px;
+
+
+        #navBar {
+            position: relative;
+            width: 100vw;
+            height: 10vh;
             background-color: #999;
+            padding-top: 1px;
         }
-        
+
+        #logo {
+            position: absolute;
+            display: block;
+            /* display: inline-block; */
+            width: 8vh;
+            height: 8vh;
+            border-radius: 50%;
+            left: 11.66vw;
+            top: 1vh;
+            /* margin-left: 11.66vw; */
+            /* margin-top: 5vh; */
+        }
+
+        #navList {
+            position: absolute;
+            width: 33.33vw;
+            background-color: #099;
+            /* display: inline-block; */
+            left: 16.66vw;
+            top: 5.9vh;
+            display: flex;
+            justify-content:space-between;
+            padding: 0;
+        }
+
+        .navListItem {
+            list-style-type: none;
+            display: inline-block;
+        }
+        .navListItem a:link{
+            text-decoration: none;
+            color: black;
+        }
+        .navListItem a:visited{
+            text-decoration: none;
+            color: black;
+        }
+        .navListItem a:hover{
+            text-decoration: none;
+            color: white;
+        }
+        .navListItem a:visited{
+            text-decoration: none;
+            color: black;
+        }
+
+        #navLogo {
+            position: absolute;
+            width: 6.66vw;
+            background-color: #099;
+            /* display: inline-block; */
+            left: 83.4vw;
+            top: 5.9vh;
+            display: flex;
+            justify-content:space-around;
+            padding: 0;
+        }
+
+        .navLogoItem {
+            list-style-type: none;
+            display: inline-block;
+        }
+        .navLogoItem a:link{
+            text-decoration: none;
+            color: black;
+        }
+        .navLogoItem a:visited{
+            text-decoration: none;
+            color: black;
+        }
+        .navLogoItem a:hover{
+            text-decoration: none;
+            color: white;
+        }
+        .navLogoItem a:visited{
+            text-decoration: none;
+            color: black;
+        }
+
+        #gridForEdit {
+            display: none;
+            /* display: grid; */
+            position: absolute;
+            opacity: 0.15;
+            width: 80vw;
+            height: 100vh;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+        }
+
+        .gridForEditItem {
+            background-color: #555;
+            border: 1px solid #000;
+        }
     </style>
 
 </head>
-<body>
-    
-<nav>
-    <div id="navBar">
-        <img src="" alt="" id="logo">
 
+<body>
+
+
+
+
+    <nav>
+        <div id="navBar">
+            <img src="./img/testImg/paw_logo.jpg" alt="" id="logo">
+
+            <ul id="navList">
+                <li class="navListItem"><a href="">服務項目</a></li>
+                <li class="navListItem"><a href="">可愛貓咪</a></li>
+                <li class="navListItem"><a href="">服務預約</a></li>
+                <li class="navListItem"><a href="">實體商品</a></li>
+                
+            </ul>
+            <ul id="navLogo">
+                <li class="navLogoItem"><a href=""><i class="fas fa-user"></i></a></li>
+                <li class="navLogoItem"><a href=""><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+
+            
+        </div>
+    </nav>
+
+
+
+    <div id="gridForEdit">
+        <div class="gridForEditItem"></div>
+        <div class="gridForEditItem"></div>
+        <div class="gridForEditItem"></div>
+        <div class="gridForEditItem"></div>
+        <div class="gridForEditItem"></div>
+        <div class="gridForEditItem"></div>
+        <div class="gridForEditItem"></div>
+        <div class="gridForEditItem"></div>
+        <div class="gridForEditItem"></div>
+        <div class="gridForEditItem"></div>
+        <div class="gridForEditItem"></div>
+        <div class="gridForEditItem"></div>
     </div>
 
-    
-</nav>
-
-
+    <script src="./img/svg/font_awson.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
