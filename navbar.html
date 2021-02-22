@@ -12,98 +12,107 @@
     <link rel="stylesheet" href="./frames/bootstrap/_css/bootstrap.min.css">
 
     <style>
-
-
         #navBar {
-            position: relative;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
             width: 100vw;
-            height: 10vh;
+            max-width: 1024px;
+            height: 100px;
             background-color: #999;
             padding-top: 1px;
+            margin: auto;
         }
 
         #logo {
-            position: absolute;
+
             display: block;
-            /* display: inline-block; */
-            width: 8vh;
-            height: 8vh;
+
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            left: 11.66vw;
-            top: 1vh;
-            /* margin-left: 11.66vw; */
-            /* margin-top: 5vh; */
+
+            grid-column: 1/ span 1;
+            margin: auto;
         }
 
         #navList {
-            position: absolute;
-            width: 33.33vw;
+   
             background-color: #099;
-            /* display: inline-block; */
-            left: 16.66vw;
-            top: 5.9vh;
+        
             display: flex;
-            justify-content:space-between;
+            justify-content: space-between;
             padding: 0;
+            margin: 0;
+            grid-column: 2/ span 5;
+            height: fit-content;
+            align-self: flex-end;
         }
 
         .navListItem {
             list-style-type: none;
             display: inline-block;
         }
-        .navListItem a:link{
+
+        .navListItem a:link {
             text-decoration: none;
             color: black;
         }
-        .navListItem a:visited{
+
+        .navListItem a:visited {
             text-decoration: none;
             color: black;
         }
-        .navListItem a:hover{
+
+        .navListItem a:hover {
             text-decoration: none;
             color: white;
         }
-        .navListItem a:visited{
+
+        .navListItem a:visited {
             text-decoration: none;
             color: black;
         }
 
         #navLogo {
-            position: absolute;
-            width: 6.66vw;
+       
             background-color: #099;
-            /* display: inline-block; */
-            left: 83.4vw;
-            top: 5.9vh;
+   
             display: flex;
-            justify-content:space-around;
+            justify-content: space-around;
             padding: 0;
+            margin: 0;
+            grid-column: 12/ span 1;
+            height: fit-content;
+            align-self: flex-end;
         }
 
         .navLogoItem {
             list-style-type: none;
             display: inline-block;
         }
-        .navLogoItem a:link{
-            text-decoration: none;
-            color: black;
-        }
-        .navLogoItem a:visited{
-            text-decoration: none;
-            color: black;
-        }
-        .navLogoItem a:hover{
-            text-decoration: none;
-            color: white;
-        }
-        .navLogoItem a:visited{
+
+        .navLogoItem a:link {
             text-decoration: none;
             color: black;
         }
 
-        #gridForEdit {
-            display: none;
-            /* display: grid; */
+        .navLogoItem a:visited {
+            text-decoration: none;
+            color: black;
+        }
+
+        .navLogoItem a:hover {
+            text-decoration: none;
+            color: white;
+        }
+
+        .navLogoItem a:visited {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* #gridForEdit {
+            display: grid;
             position: absolute;
             opacity: 0.15;
             width: 80vw;
@@ -119,7 +128,7 @@
         .gridForEditItem {
             background-color: #555;
             border: 1px solid #000;
-        }
+        } */
     </style>
 
 </head>
@@ -129,29 +138,27 @@
 
 
 
-    <nav>
-        <div id="navBar">
-            <img src="./img/testImg/paw_logo.jpg" alt="" id="logo">
 
-            <ul id="navList">
-                <li class="navListItem"><a href="">服務項目</a></li>
-                <li class="navListItem"><a href="">可愛貓咪</a></li>
-                <li class="navListItem"><a href="">服務預約</a></li>
-                <li class="navListItem"><a href="">實體商品</a></li>
-                
-            </ul>
-            <ul id="navLogo">
-                <li class="navLogoItem"><a href=""><i class="fas fa-user"></i></a></li>
-                <li class="navLogoItem"><a href=""><i class="fas fa-shopping-cart"></i></a></li>
-            </ul>
+    <nav id="navBar">
+        <img src="./img/testImg/paw_logo.jpg" alt="" id="logo">
 
-            
-        </div>
+        <ul id="navList">
+            <li class="navListItem"><a href="">服務項目</a></li>
+            <li class="navListItem"><a href="">可愛貓咪</a></li>
+            <li class="navListItem"><a href="">服務預約</a></li>
+            <li class="navListItem"><a href="">實體商品</a></li>
+
+        </ul>
+        <ul id="navLogo">
+            <li class="navLogoItem"><a href=""><i class="fas fa-user"></i></a></li>
+            <li class="navLogoItem"><a href=""><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
     </nav>
 
 
 
-    <div id="gridForEdit">
+
+    <!-- <div id="gridForEdit">
         <div class="gridForEditItem"></div>
         <div class="gridForEditItem"></div>
         <div class="gridForEditItem"></div>
@@ -164,7 +171,7 @@
         <div class="gridForEditItem"></div>
         <div class="gridForEditItem"></div>
         <div class="gridForEditItem"></div>
-    </div>
+    </div> -->
 
     <script src="./img/svg/font_awson.js" crossorigin="anonymous"></script>
 </body>
