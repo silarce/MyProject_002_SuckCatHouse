@@ -1,3 +1,8 @@
+/* https://glassmorphism.com/
+https://cssgradient.io/
+https://uigradients.com/#LoveandLiberty */
+
+
 @font-face {
     font-family: 'NotoRegular';
     src: url(../font_face/Noto_Sans_TC/NotoSansTC-Regular.otf);
@@ -11,12 +16,16 @@
 }
 
 .bg_brb_lg{
-    background: linear-gradient(45deg, rgba(0, 0, 0, 1) 0%, rgba(200, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(60deg, rgba(0, 0, 0, 1) 0%,rgba(0, 0, 0, 1) 20%, #6f0000 50%,rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%);
+    /* background: linear-gradient(60deg, rgba(0, 0, 0, 1) 0%,rgba(0, 0, 0, 1) 20%, rgba(200, 0, 0, 1) 50%,rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%); */
+    /* background: linear-gradient(60deg, #200122 0%,#200122 20%, #6f0000 50%,#200122 80%, #200122 100%); */
+    background-attachment: fixed;
 }
-.bg_gm_w{
+.bg_gm_w_wb{
     background: rgba( 255, 255, 255, 0.2 );
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
     backdrop-filter: blur( 3.0px );
-    border-radius: 7px;
+    border-radius: 8px;
     /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
 }

@@ -47,10 +47,10 @@ body {
     text-decoration: none;
     color: inherit;
 }
-.navListItem a:hover {  
-    /* color: white; */
-    /* font-weight: bold; */
-}
+/* .navListItem a:hover {  
+    color: white;
+    font-weight: bold;
+} */
 
 #navLogo {
     display: flex;
