@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'NotoRegular';
+    src: url(../font_face/Noto_Sans_TC/NotoSansTC-Regular.otf);
+}
+@font-face {
+    font-family: 'NotoBlack';
+    src: url(../font_face/Noto_Sans_TC/NotoSansTC-Black.otf);
+}
+* {
+    font-family: 'NotoRegular';
+}
+
+.bg_brb_lg{
+    background: linear-gradient(45deg, rgba(0, 0, 0, 1) 0%, rgba(200, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 100%);
+}
+.bg_gm_w{
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur( 3.0px );
+    border-radius: 7px;
+    /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+}

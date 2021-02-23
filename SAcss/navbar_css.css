@@ -1,0 +1,82 @@
+body {
+    /* 這個CSS可以使這個html作為iframe元素時背景透明 */
+    /* background-color: transparent; */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(3.0px);
+}
+
+#navBar {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100vw;
+    height: 100px;
+    max-width: 1024px;
+    padding-top: 1px;
+    margin: auto;
+}
+#logo {
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    grid-column: 1/ span 1;
+    margin: auto;
+}
+
+#navList {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    grid-column: 2/ span 5;
+    height: fit-content;
+    align-self: flex-end;
+}
+
+.navListItem {
+    list-style-type: none;
+    display: inline-block;
+    width: 90px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+.navListItem a{
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+.navListItem a:hover {  
+    /* color: white; */
+    /* font-weight: bold; */
+}
+
+#navLogo {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    grid-column: 12/ span 1;
+    height: fit-content;
+    align-self: flex-end;
+}
+
+.navLogoItem {
+    list-style-type: none;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.navLogoItem a{
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+/* .navLogoItem a:hover {
+    color: white;
+} */
+
