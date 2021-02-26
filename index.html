@@ -2,67 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    
-    <link rel="stylesheet" href="./frames/bootstrap/_css/bootstrap.min.css">
-    <script src="./frames/jQuery/jquery.min.js"></script>
-    <script src="./frames/popper.min.js"></script>
-    <script src="./frames/bootstrap/_js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index</title>
+
+  <link rel="stylesheet" href="./frames/bootstrap/_css/bootstrap.min.css">
+  <script src="./frames/jQuery/jquery.min.js"></script>
+  <script src="./frames/popper.min.js"></script>
+  <script src="./frames/bootstrap/_js/bootstrap.min.js"></script>
 
 
-    <!-- SAcss and SAjs -->
-    <link rel="stylesheet" href="./SAcss/global_css.css">
-    <link rel="stylesheet" href="./SAcss/index_css.css">
-    <style>
+  <!-- SAcss and SAjs -->
+  <link rel="stylesheet" href="./SAcss/global_css.css">
+  <link rel="stylesheet" href="./SAcss/index_css.css">
+  <style>
 
-    </style>
+  </style>
 
 </head>
 
 <body class="bg_brb_lg">
-    <main>
-        <nav>
-        <!-- 要使iframe背景透明時加入這個屬性 -->
-        <!--allowtransparency="true"-->
-        <iframe id="navBar" src="navbar.html" frameborder="0" ></iframe>
+  <main class="bg_gm_w">
+    <nav>
+      <!-- 要使iframe背景透明時加入這個屬性 -->
+      <!--allowtransparency="true"-->
+      <iframe id="navBar" src="navbar.html" frameborder="0"></iframe>
     </nav>
-    <header id="hero" class="bg_gm_w_wb">
+    <header id="hero" class="bg_gm_w">
+      <!-- 以下全是BS的東西 -->
+      <div id="demo" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
 
-        <div id="demo" class="carousel slide" data-ride="carousel">
-
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-              <li data-target="#demo" data-slide-to="0" class="active"></li>
-              <li data-target="#demo" data-slide-to="1"></li>
-              <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
-            
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-              <div class="heroImage carousel-item active">
-                <img src="./img/testImg/nala/123784539_3705579956200136_5083256242014946095_o.jpg" alt="Los Angeles" width="1100" height="500">
-              </div>
-              <div class="heroImage carousel-item">
-                <img src="./img/testImg/600x400_2.jpg" alt="Chicago" width="1100" height="500">
-              </div>
-              <div class="heroImage carousel-item">
-                <img src="./img/testImg/600x400_4.jpg" alt="New York" width="1100" height="500">
-              </div>
-            </div>
-            
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </a>
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="heroImage carousel-item active">
+            <img src="./img/testImg/nala/123784539_3705579956200136_5083256242014946095_o.jpg" alt="Los Angeles"
+              width="1100" height="500">
           </div>
+          <div class="heroImage carousel-item">
+            <img src="./img/testImg/nala/128595501_3779476762143788_7500541527943180203_o.jpg" alt="Chicago"
+              width="1100" height="500">
+          </div>
+          <div class="heroImage carousel-item">
+            <img src="./img/testImg/nala/146316260_3940907486000714_2949877247819851769_o.jpg" alt="New York"
+              width="1100" height="500">
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      <!-- 以上全是BS的東西 -->
     </header>
-    </main>
+    <section class="bg_gm_w">
+      <div class="bg_gm_w">
+        <div>
+          <h1>吸&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp貓</h1>
+          <h2>是一種解放</h2>
+        </div>
+        <pre>
+        脫下矜持，忽視世俗的目光
+        盡情吸吧
+        </pre>
+      </div>
+      <div class="bg_gm_w">
+
+      </div>
+    </section>
+  </main>
 
 </body>
 

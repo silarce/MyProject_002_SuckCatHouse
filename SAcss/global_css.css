@@ -21,8 +21,9 @@ https://uigradients.com/#LoveandLiberty */
     /* background: linear-gradient(60deg, #200122 0%,#200122 20%, #6f0000 50%,#200122 80%, #200122 100%); */
     background-attachment: fixed;
 }
-.bg_gm_w_wb{
-    background: rgba( 255, 255, 255, 0.2 );
+/* 格式:背景_玻璃擬態_白色 */
+.bg_gm_w{
+    background: rgba( 255, 255, 255, 0.1 );
     /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
     box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
     backdrop-filter: blur( 3.0px );
