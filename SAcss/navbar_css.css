@@ -1,7 +1,7 @@
 body {
     /* 這個CSS可以使這個html作為iframe元素時背景透明 */
     /* background-color: transparent; */
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0);
     backdrop-filter: blur(3.0px);
 }
 

@@ -1,85 +1,139 @@
 main {
-    width: 1024px;
-    /* height: 1000px; */
-    margin: auto;
+  width: 1024px;
+  /* height: 1000px; */
+  margin: auto;
 }
+
+/* -------------------------- */
 
 #navBar {
-    width: 100%;
-    height: 100px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    /* box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37); */
-    border-radius: 8px;
-}
-#hero{
-width: 100%;
-height: 500px;
+  width: 100%;
+  height: 100px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  /* box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37); */
+  border-radius: 8px;
 }
 
-.heroImage{
-    text-align: center;
+/* -------------------------------- */
+
+#hero {
+  width: 100%;
+  height: 500px;
 }
-.heroImage img{
-    /* width:100%;
+
+.heroImage {
+  text-align: center;
+}
+
+.heroImage img {
+  /* width:100%;
     height: 100%; */
-    object-fit: contain;
+  object-fit: contain;
 }
 
-.carousel-inner{
-width: 100%;
-height: 500px;
+.carousel-inner {
+  width: 100%;
+  height: 500px;
 }
 
 /* 想修改箭頭的大小與位置，放在後面處理 */
+
 /* .carousel-control-prev {
     left: -60px;
   }
   .carousel-control-next {
     right: -60px;
   } */
-  
-  /* .carousel-control-prev-icon,
+
+/* .carousel-control-prev-icon,
   .carousel-control-next-icon {
     width: 20px;
     height: 20px;
   } */
 
-  section{
-    width: 100%;
-    /* height: 500px; */
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 600px;
-  }
-  section div:first-child{
-    /* width: 300px; */
-    /* height: 300px; */
-    grid-column: 1/span 6;
-  }
+/* ------------------------------- */
 
-  
-  section div div{
-    text-align: center;
-    margin-top: 25%;
-  }
-  section div div h1{
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
+#section1 {
+  width: 100%;
+  grid-template-rows: 600px;
+}
 
-  section div:last-child{
-    /* width: 300px; */
-    height: 400px;
-    grid-column: 7/span 6;
-    align-self: center;
-  }
+#section1 div:first-child {
+  /* width: 300px; */
+  /* height: 300px; */
+  grid-column: 1/span 6;
+}
 
-  section div img{
-    /* object-fit: contain; */
-    /* width: 100%; */
-    height: 100%;
-    display: block;
-  }
+#section1 div div {
+  text-align: center;
+  margin-top: 25%;
+}
 
+#section1 div div h1 {
+  font-weight: bold;
+  font-size: 4.5rem;
+  margin-bottom: 10px;
+}
 
+#section1 div p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
 
+#section1 div:last-child {
+  /* width: 300px; */
+  height: 500px;
+  grid-column: 7/span 6;
+  align-self: center;
+}
+
+#section1 div img {
+  object-fit: cover;
+  width: 95%;
+  height: 100%;
+  /* display: block; */
+  border-radius: 8px;
+}
+
+/* --------------------------------- */
+
+#section2 h1 {
+  grid-column: 1/13;
+  text-align: center;
+  font-size: 4rem;
+}
+
+/* -------------------------- */
+
+#imgGrid {
+  width: 100%;
+  height: 600px;
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+  /* box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37); */
+  /* border-radius: 8px; */
+}
+
+#section2>div {
+  grid-column: 2/12;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 400px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* #section2 > div div{
+  background-color: #000;
+  border: white solid 1px;
+} */
+
+/* #section2 div div:nth-of-type(1){
+  grid-column: 1 / span 3;
+}
+#section2 div div:nth-of-type(2){
+  grid-column: 5 / span 3;
+}
+#section2 div div:nth-of-type(3){
+  grid-column: 9 / span 3;
+} */
