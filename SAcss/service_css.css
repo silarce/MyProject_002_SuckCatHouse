@@ -1,0 +1,18 @@
+
+#section1{
+    margin-top: 50px;
+}
+
+#section1 h1, #section1 h2, #section1 pre{
+    margin:30px;
+}
+#section1 h2{
+    font-size: 3rem;
+}
+#section1 pre{
+    margin-top: -20px;
+}
+#section1 img{
+display: block;
+margin: auto;
+}

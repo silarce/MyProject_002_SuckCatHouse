@@ -2,44 +2,75 @@
 https://cssgradient.io/
 https://uigradients.com/#LoveandLiberty */
 
-
 @font-face {
     font-family: 'NotoRegular';
     src: url(../font_face/Noto_Sans_TC/NotoSansTC-Regular.otf);
 }
+
 @font-face {
     font-family: 'NotoBlack';
     src: url(../font_face/Noto_Sans_TC/NotoSansTC-Black.otf);
 }
-* {
-    font-family: 'NotoRegular';
+
+:root {
+    --xlWidth: 1024px;
+    /* --tittleColor: white; */
+    --textColor: #222;
 }
 
-.bg_brb_lg{
-    background: linear-gradient(60deg, rgba(0, 0, 0, 1) 0%,rgba(0, 0, 0, 1) 20%, #6f0000 50%,rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%);
+* {
+    font-family: 'NotoRegular';
+    color: var(--textColor);
+}
+h1 {
+    font-size: 4rem;
+}
+pre{
+    font-size: 1.5rem;
+}
+
+.bg_brb_lg {
+    background: linear-gradient(60deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 20%, #6f0000 50%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%);
     /* background: linear-gradient(60deg, rgba(0, 0, 0, 1) 0%,rgba(0, 0, 0, 1) 20%, rgba(200, 0, 0, 1) 50%,rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%); */
     /* background: linear-gradient(60deg, #200122 0%,#200122 20%, #6f0000 50%,#200122 80%, #200122 100%); */
     background-attachment: fixed;
 }
+
 /* 格式:背景_玻璃擬態_白色 */
-.bg_gm_w_03{
+
+.bg_gm_w_03 {
     background: rgba( 255, 255, 255, 0.25);
     /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
     box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
-    backdrop-filter: blur( 3.0px );
-    border-radius: 8px;
-    /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
-}
-.bg_gm_w_01{
-    background: rgba( 255, 255, 255, 0.1);
-    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
-    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
-    backdrop-filter: blur( 3.0px );
+    backdrop-filter: blur( 3.0px);
     border-radius: 8px;
     /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
 }
 
-.grid_12{
+.bg_gm_w_01 {
+    background: rgba( 255, 255, 255, 0.1);
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+    backdrop-filter: blur( 3.0px);
+    border-radius: 8px;
+    /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+}
+
+.grid_12 {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-  }
+}
+
+main {
+    width: var(--xlWidth);
+    /* height: 1000px; */
+    margin: auto;
+}
+
+#navBar {
+    width: 100%;
+    height: 100px;
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+    border-radius: 8px;
+}
