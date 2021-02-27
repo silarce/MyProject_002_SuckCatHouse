@@ -15,19 +15,9 @@ https://uigradients.com/#LoveandLiberty */
 :root {
     --xlWidth: 1024px;
     /* --tittleColor: white; */
-    --textColor: #222;
+    --textColor: #eee;
 }
 
-* {
-    font-family: 'NotoRegular';
-    color: var(--textColor);
-}
-h1 {
-    font-size: 4rem;
-}
-pre{
-    font-size: 1.5rem;
-}
 
 .bg_brb_lg {
     background: linear-gradient(60deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 20%, #6f0000 50%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%);
@@ -56,6 +46,18 @@ pre{
     /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
 }
 
+* {
+    font-family: 'NotoRegular';
+    color: var(--textColor);
+}
+h1 {
+    font-size: 4rem;
+}
+pre{
+    font-size: 1.5rem;
+}
+
+
 .grid_12 {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -65,6 +67,8 @@ main {
     width: var(--xlWidth);
     /* height: 1000px; */
     margin: auto;
+    padding-bottom: 30px;
+    min-height: 500px;
 }
 
 #navBar {

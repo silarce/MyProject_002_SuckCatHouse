@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服務預約</title>
+    <link rel="stylesheet" href="./frames/bootstrap/css/bootstrap.min.css">
+    <script src="./frames/jQuery/jquery.min.js"></script>
+    <script src="./frames/popper.min.js"></script>
+    <script src="./frames/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- SAcss and SAjs -->
+    <link rel="stylesheet" href="./SAcss/global_css.css">
+    <link rel="stylesheet" href="./SAcss/serviceReservation_css.css">
+</head>
+<body class="bg_brb_lg">
+    <main class="bg_gm_w_03">
+        <nav>
+            <iframe id="navBar" src="navbar.html" frameborder="0"></iframe>
+        </nav>
+        <form id="SRForm" action="">
+            <h1>服務預約</h1>
+            <br>
+            <div id="labelList" class="inForm">
+                <label for="">選擇服務 :</label>
+                <br>
+                <label for="catID">選擇貓 :</label>
+            </div>
+
+            <div id="selectList" class="inForm ">
+                <select name="serviceID" id="serviceID" class="bg_gm_w_03">
+                    <option value="吸貓">吸貓</option>
+                    <option value="肉球踏踏">肉球踏踏</option>
+                </select>
+                <br>
+                <select name="catID" id="serviceID" class="bg_gm_w_03">
+                    <option value="1">Aurora</option>
+                    <option value="2">Grumpy</option>
+                    <option value="3">Nala</option>
+                    <option value="4">Hosico</option>
+                    <option value="5">Messy</option>
+                    <option value="6">Venus</option>
+                </select>
+            </div>
+            <br>
+            <label id="exInfoLable" for="exInfo">備註</label>
+            <br>
+            <textarea name="exInfo" id="exInfo" cols="60" rows="5">請告訴我們您有多愛吸貓</textarea>
+            <br>
+            <input id="sendOut" class="bg_gm_w_03" type="submit" value="送出">
+        </form>
+
+    </main>
+
+
+</body>
+</html>
