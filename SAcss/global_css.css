@@ -35,6 +35,7 @@ https://uigradients.com/#LoveandLiberty */
     backdrop-filter: blur( 3.0px);
     border-radius: 8px;
     /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+    border: none;
 }
 
 .bg_gm_w_01 {
@@ -44,10 +45,17 @@ https://uigradients.com/#LoveandLiberty */
     backdrop-filter: blur( 3.0px);
     border-radius: 8px;
     /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+    border: none;
 }
 
-* {
+/* * {
     font-family: 'NotoRegular';
+    color: var(--textColor);
+} */
+*{
+    font-family: 'NotoRegular';
+}
+h1, h2, h3, h4, h5, h6, p, span, div, li {
     color: var(--textColor);
 }
 h1 {
@@ -68,7 +76,6 @@ main {
     /* height: 1000px; */
     margin: auto;
     padding-bottom: 30px;
-    min-height: 500px;
 }
 
 #navBar {

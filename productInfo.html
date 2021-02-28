@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品明細</title>
+
+    <link rel="stylesheet" href="./frames/bootstrap/css/bootstrap.min.css">
+    <script src="./frames/jQuery/jquery.min.js"></script>
+    <script src="./frames/popper.min.js"></script>
+    <script src="./frames/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./img/svg/font_awson.js" crossorigin="anonymous"></script>
+    <!-- SAcss and SAjs -->
+    <link rel="stylesheet" href="./SAcss/global_css.css">
+    <link rel="stylesheet" href="./SAcss/productInfo_css.css">
+
+
+</head>
+
+<body class="bg_brb_lg">
+    <main class="bg_gm_w_03">
+        <nav>
+            <iframe id="navBar" src="navbar.html" frameborder="0"></iframe>
+        </nav>
+
+        <section id="mainGrid">
+            <div id="productType">
+                <h2>商品項目</h2>
+                <ul>
+                    <li>貓咪紀錄片</li>
+                    <li>貓咪毛包</li>
+                </ul>
+            </div>
+            <div id="productImg" class="bg_gm_w_01">
+                <h5>NY-0923</h5>
+                <h1>ザ・スクープ！！緊急特番ヤガイ映像120分スペシャル</h1>
+                <img src="./img/SoftNyanko/cover/NYAN-004.jpg" alt="">
+                <pre>日の光を浴びて、悩ましい姿を華麗にくねらせる！
+家の中では見られない、のびのびとしたその姿はマニアでなくても見愡れる事間違いなし！！
+野外のヤバイ映像を120分てんこもりでお届けします！</pre>
+            </div>
+            <div>
+                <div id="productInfo">
+                    <p>產品名稱 :</p>
+                    <p>ザ・スクープ！！緊急特番ヤガイ映像120分スペシャル</p>
+
+                    <p>產品編號 :</p>
+                    <p>NY-0923</p>
+
+                    <p>發行公司 :</p>
+                    <p>SoftNyanko</p>
+
+                    <p>主要演員 :</p>
+                    <p>素猫多数</p>
+
+
+                </div>
+
+                <div id="price">
+                    <p>售價 : 1000元</p>
+                    <span>訂購 :</span>
+                    <form action="">
+                        <div>
+                            <div id="order">
+                                <div class="bg_gm_w_03"><i class="fas fa-plus"></i></div>
+                                <input class="bg_gm_w_03" id="orderNum" type="text" value="0">
+                                <div class="bg_gm_w_03"><i class="fas fa-minus"></i></div>
+                            </div>
+                        </div>
+                        <input class="bg_gm_w_03" type="submit" value="放進購物車">
+                        <input class="bg_gm_w_03" type="submit" value="立即購買">
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 功能:增減商品數量
+        const oNum = document.querySelector('#orderNum');
+        const oAdd = document.querySelector('#order div:nth-of-type(1)');
+        const oMinu = document.querySelector('#order div:nth-of-type(2)');
+
+        // let a = parseInt(oNum.value);
+
+        oAdd.addEventListener('click', function () {
+            let a = parseInt(oNum.value)
+            a += 1
+            oNum.value = a;
+        });
+        oMinu.addEventListener('click', function () {
+            let a = parseInt(oNum.value)
+            if (a > 0) {
+                a -= 1
+                oNum.value = a;
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

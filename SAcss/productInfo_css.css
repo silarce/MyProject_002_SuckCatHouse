@@ -1,0 +1,122 @@
+#mainGrid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 2fr 5fr 4fr;
+}
+
+/* ----------商品類別------------------------- */
+
+#productType ul li {
+    list-style-type: none;
+    font-size: 1.4rem;
+}
+
+/* ----------商品圖片----------------------- */
+
+#productImg {
+    padding: 5px;
+}
+
+#productImg h5 {
+    margin: 0;
+}
+
+#productImg h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+#productImg img {
+    width: 100%;
+}
+
+#productImg pre {
+    color: black;
+    margin: 0;
+    font-size: 0.92rem;
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+
+/* ----商品資訊---------------------------------- */
+
+#mainGrid div:nth-of-type(3) {
+    margin-left: 10px;
+}
+
+/* 為什麼在test2.html中
+vertical-align: top;放在父元素有效
+這邊卻要放在子元素才有效? */
+
+#productInfo p {
+    vertical-align: top;
+    font-size: 2.1rem;
+    display: inline-block;
+    /* width: 49%; */
+    /* overflow:hidden; */
+    /* white-space: pre-wrap; */
+    font-size: 1.6rem;
+}
+
+#productInfo p:nth-of-type(2n - 1) {
+    width: 35%;
+}
+
+#productInfo p:nth-of-type(2n) {
+    width: 60%;
+}
+
+
+/* --------訂購區塊---------- */
+#price div{
+    color: black;
+}
+
+/* 售價與訂購文字 */
+
+#price p:first-child {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+#price span:nth-of-type(1) {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* 訂購form */
+
+#order {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#order div, #orderNum {
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+#order div {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#orderNum {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+/* submit */
+#price form input[type = "submit"]{
+width: 140px;
+height: 50px;
+font-size: 1.4rem;
+margin-left: 20px;
+}

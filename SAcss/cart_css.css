@@ -1,0 +1,58 @@
+   
+   main h1:nth-of-type(1){
+    margin-top: 30px;
+   }
+   #cartTitle{
+       display: grid;
+       grid-template-columns: 2fr 4fr 2fr 2fr 2fr ;
+       margin-top:  20px;
+   }
+   #cartTitle div{
+    padding-left: 10px;
+    font-size: 1.4rem;
+   }
+/* ------------------------ */
+   .cartList{
+       display: grid;
+       grid-template-columns: 2fr 4fr 2fr 2fr 2fr ;
+       border: 3px solid rgba( 255, 255, 255, 0.18 );
+       height: 150px;
+   }
+   .cartList div{
+    padding-left: 10px;
+    line-height: 150px ;
+    font-size: 1.4rem;
+}
+.cartList img{
+    /* text-align: center;
+    line-height: 150px ; */
+    padding: 5px;
+       width: 100%;
+   }
+
+   .cartList div:nth-of-type(1){
+       position: relative;
+   }
+   .cartList div p{
+       line-height: initial;
+       height: fit-content;
+       position: absolute;
+       top: 0;
+       bottom: 0;
+       left: 0;
+       right: 0;
+       margin: auto;
+   }
+   main h2:nth-of-type(1){
+       text-align: end;
+       margin-right: 110px;
+       margin-top:10px ;
+       margin-bottom: 30px;
+   }
+   form{
+       margin-left: 10px;
+       margin-top:10px ;
+   }
+   form label{
+       font-size: 1.4rem;
+   }
