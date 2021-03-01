@@ -1,3 +1,22 @@
+<?php
+
+if (!isset($_COOKIE['houseMember'])) {
+    header('location: login.php');
+}
+
+$link = mysqli_connect('localhost', 'root', '', 'suckcathouse', 3306);
+$result = mysqli_query($link, 'set names utf8');
+
+$sql = <<< aaa
+SELECT * FROM `members`
+where name = '{$_COOKIE['houseMember']}'
+aaa;
+$result = mysqli_query($link, $sql);
+$row = mysqli_fetch_assoc($result);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,17 +71,19 @@
         </div>
         <form class="" action="">
             <label for="name">姓名 :</label>
-            <input type="text" name="name" id="userName">
+            <input type="text" name="name" id="userName" value="<?=$row['name']?>">
             <br>
             <label for="tel">電話 :</label>
-            <input type="text" name="tel" id="tel">
+            <input type="text" name="tel" id="tel" value="<?=$row['tel']?>">
             <br>
             <label for="address">地址 :</label>
-            <input type="text" name="address" id="address">
+            <input type="text" name="address" id="address" value="<?=$row['address']?>">
             <h4>寄送方式 : 貨到付款 (本會館只支援貨到付款,絕對不是因為工程師時間不夠)</h4>
             <input class="bg_gm_w_01" type="submit" value="確認訂購">
         </form>
-
+        
+        <a id="cancel" class="bg_gm_w_03" href="http://localhost/suckCatHouse/index.php">取消</a>
+        
 
     </main>
 

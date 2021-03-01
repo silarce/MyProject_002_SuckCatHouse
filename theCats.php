@@ -1,3 +1,20 @@
+<?php
+$link = mysqli_connect('localhost', 'root', '', 'suckcathouse',3306);
+$result = mysqli_query($link, 'set names utf8');
+$id = $_GET['id'];
+
+$sql = <<<command
+SELECT * FROM `cats`
+where catID = $id
+command;
+
+$result = mysqli_query($link, $sql);
+$row = mysqli_fetch_assoc($result);
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,35 +41,33 @@
         </nav>
         <section id="section1" class="grid_12">
 
-            <h1 id="catName">Cat' Name</h1>
+            <h1 id="catName"><?= $row['catName'] ?></h1>
 
             <div id="catInfo">
                 <!-- <h6>品種 :<br>性別 :<br>毛色 :<br>肉球色 :</h6> -->
                 <ul>
                     <li>品種 :
-                        <p>米克斯</p>
+                        <p><?= $row['breed'] ?></p>
                     </li>
                     <li>性別 :
-                        <p>母</p>
+                        <p><?= $row['sex'] ?></p>
                     </li>
                     <li>毛色 :
-                        <p>吹雪白</p>
+                        <p><?= $row['furColor'] ?></p>
                     </li>
                     <li>肉球色 :
-                        <p>玫瑰粉</p>
+                        <p><?= $row['pawColor'] ?></p>
                     </li>
                 </ul>
           
                 
             </div>
             <p id="catDesc">
-                阿喵可愛阿喵可愛阿喵可愛阿喵可愛阿喵可愛阿喵可愛
-                阿喵可愛阿喵可愛阿喵可愛阿喵可愛阿喵可愛阿喵可愛阿
-                阿喵可愛阿喵可愛阿喵可愛阿喵可愛
+            <?= $row['catDesc'] ?>
             </p>
 
             <div id="catImg" class="">
-                <img src="./img/img_index/0001.jpg" alt="">
+                <img src="<?= $row['coverImgPath']?>" alt="">
             </div>
         </section>
     </main>

@@ -16,13 +16,17 @@
     justify-content: space-around;
     row-gap: 30px;
 }
+a.pdCard{
+    text-decoration: none;
+}
 
 .pdCard h4 {
     color: black;
-    height: calc((var(--xlWidth) / 4) * 0.2);
+    /* height: calc((var(--xlWidth) / 4) * 0.2); */
     font-size: 1.2rem;
     margin: 0;
     border-radius: 8px 8px 0 0;
+    padding: 5px;
 }
 
 .cardImg {

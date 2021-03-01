@@ -11,8 +11,36 @@
 }
 #section1 pre{
     margin-top: -20px;
+    text-align: start;
+    font-size: 1.5rem;
+    padding: 15px;
+    white-space: pre-wrap;
+    color: var(--textColor);
 }
 #section1 img{
 display: block;
 margin: auto;
+}
+#boss{
+    width: 300px;
+    height: 450px;
+    float: right;
+    overflow: hidden;
+}
+#bossTitle{
+    font-size: 3rem;
+}
+#boss img{
+    display: block;
+    /* width: 100%; */
+    /* height: 450px; */
+    object-fit: cover;
+    object-position: -400px -800px;
+}
+#section1 #bossTalk{
+    font-size: 1.8rem;
+}
+
+#bossTalk + h2{
+margin-top: -50px;
 }

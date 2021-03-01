@@ -24,10 +24,11 @@
     font-size: 1.4rem;
 }
 
-#exInfoLable{
+#psLabel{
     font-size:2.5rem;
+    color: var(--textColor);
 }
-#exInfo{
+#ps{
     color: black;
     font-size: 1.4rem;
     background: rgba( 255, 255, 255, 0.5);

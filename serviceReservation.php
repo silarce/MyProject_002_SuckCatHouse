@@ -1,3 +1,33 @@
+<?php
+if (!isset($_COOKIE['houseMember'])) {
+    header('location: login.php');
+}
+
+if(isset($_POST['sendOut'])){
+    $link = mysqli_connect('localhost', 'root', '', 'suckcathouse', 3306);
+    $result = mysqli_query($link, 'set names utf8');
+
+    $sql = <<< aaa
+    SELECT * FROM `members`
+    where name = '{$_COOKIE['houseMember']}'
+    aaa;
+    $result = mysqli_query($link, $sql);
+    $row = mysqli_fetch_assoc($result);
+    
+    $sql = <<< aaa
+    INSERT into reservation
+    (catID, service, ps, memberID, name)
+    VALUE
+    ('{$_POST['catID']}','{$_POST['service']}',
+    '{$_POST['ps']}','{$row['memberID']}', '{$row['name']}')
+    aaa;
+    $result = mysqli_query($link, $sql);
+
+    header('location: http://localhost/suckCatHouse/reservationOK.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,17 +49,17 @@
         <nav>
             <iframe id="navBar" src="navbar.html" frameborder="0"></iframe>
         </nav>
-        <form id="SRForm" action="">
+        <form id="SRForm" method="POST" action="">
             <h1>服務預約</h1>
             <br>
             <div id="labelList" class="inForm">
-                <label for="serviceId">選擇服務 :</label>
+                <label for="service">選擇服務 :</label>
                 <br>
                 <label for="catID">選擇貓 :</label>
             </div>
 
             <div id="selectList" class="inForm ">
-                <select name="serviceID" id="serviceID" class="bg_gm_w_03">
+                <select name="service" id="service" class="bg_gm_w_03">
                     <option value="吸貓">吸貓</option>
                     <option value="肉球踏踏">肉球踏踏</option>
                 </select>
@@ -44,11 +74,11 @@
                 </select>
             </div>
             <br>
-            <label id="exInfoLable" for="exInfo">備註</label>
+            <label id="psLabel" for="ps">備註</label>
             <br>
-            <textarea name="exInfo" id="exInfo" cols="60" rows="5">請告訴我們您有多愛吸貓</textarea>
+            <textarea name="ps" id="ps" cols="60" rows="5">請告訴我們您有多愛吸貓</textarea>
             <br>
-            <input id="sendOut" class="bg_gm_w_03" type="submit" value="送出">
+            <input id="sendOut" name="sendOut" class="bg_gm_w_03" type="submit" value="送出">
         </form>
 
     </main>

@@ -1,3 +1,19 @@
+<?php
+$link = mysqli_connect('localhost', 'root', '', 'suckcathouse',3306);
+$result = mysqli_query($link, 'set names utf8');
+$id = $_GET['id'];
+
+$sql = <<<command
+SELECT * FROM `products`
+where productID = $id
+command;
+
+$result = mysqli_query($link, $sql);
+$row = mysqli_fetch_assoc($result);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,32 +50,30 @@
                 </ul>
             </div>
             <div id="productImg" class="bg_gm_w_01">
-                <h5>NY-0923</h5>
-                <h1>ザ・スクープ！！緊急特番ヤガイ映像120分スペシャル</h1>
-                <img src="./img/SoftNyanko/cover/NYAN-004.jpg" alt="">
-                <pre>日の光を浴びて、悩ましい姿を華麗にくねらせる！
-家の中では見られない、のびのびとしたその姿はマニアでなくても見愡れる事間違いなし！！
-野外のヤバイ映像を120分てんこもりでお届けします！</pre>
+                <h5><?=$row['pNum']?></h5>
+                <h1><?=$row['pName']?></h1>
+                <img src="<?=$row['imgPath']?>" alt="">
+                <pre><?=$row['pDesc']?></pre>
             </div>
             <div>
                 <div id="productInfo">
                     <p>產品名稱 :</p>
-                    <p>ザ・スクープ！！緊急特番ヤガイ映像120分スペシャル</p>
+                    <p><?=$row['pName']?></p>
 
                     <p>產品編號 :</p>
-                    <p>NY-0923</p>
+                    <p><?=$row['pNum']?></p>
 
                     <p>發行公司 :</p>
-                    <p>SoftNyanko</p>
+                    <p><?=$row['sup']?></p>
 
                     <p>主要演員 :</p>
-                    <p>素猫多数</p>
+                    <p><?=$row['actor']?></p>
 
 
                 </div>
 
                 <div id="price">
-                    <p>售價 : 1000元</p>
+                    <p>售價 : <?=$row['price']?>元</p>
                     <span>訂購 :</span>
                     <form action="">
                         <div>

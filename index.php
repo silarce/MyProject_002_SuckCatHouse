@@ -1,3 +1,15 @@
+<?php
+$link = mysqli_connect('localhost', 'root', '', 'suckcathouse', 3306);
+$result = mysqli_query($link, 'set names utf8');
+
+$sql = <<< sql
+SELECT * FROM `products`
+sql;
+
+$result = mysqli_query($link, $sql);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,13 +52,13 @@
         <!-- The slideshow -->
         <div class="carousel-inner">
           <div class="heroImage carousel-item active">
-            <img src="./img/testImg/nala/123784539_3705579956200136_5083256242014946095_o.jpg">
+            <img id="hero1" src="./img/theCats/Aurora/Aurora_005.jpg">
           </div>
           <div class="heroImage carousel-item">
-            <img src="./img/testImg/nala/128595501_3779476762143788_7500541527943180203_o.jpg">
+            <img id="hero2" src="./img/theCats/Venus/Venus_018.jpg">
           </div>
           <div class="heroImage carousel-item">
-            <img src="./img/testImg/nala/146316260_3940907486000714_2949877247819851769_o.jpg">
+            <img id="hero3" src="./img/theCats/Messi/Messi_009.jpg">
           </div>
         </div>
 
@@ -67,9 +79,8 @@
           <h2>是一種解放</h2>
         </div>
         <p>
-          吸吧吸吧吸吧吸吧吸吧吸吧吸吧 <br>
-          吸吧吸吧吸吧吸吧吸吧 <br>
-          吸吧吸吧吸吧
+          一天吸一貓 <br>
+          醫生遠離我
         </p>
       </div>
       <div class="">
@@ -86,38 +97,27 @@
           </h3>
           <h1>美德</h1>
           <pre>
-美德美德美德美德
-美德美德
-美德美德美德美德美德
-美德美德美德美德美德
-美德美德
-          </pre>
+本會館會將吸貓所得的50%用於救助沒有奴隸的可愛貓貓。
+只要您每天來吸貓，就能救助無數貓貓，幫助他們找到適合的奴隸。</pre>
         </div>
         <div class="bg_gm_w_01">
           <h3>
             吸貓是一種
           </h3>
-          <h1>美德</h1>
+          <h1>生活</h1>
           <pre>
-美德美德美德美德
-美德美德
-美德美德美德美德美德
-美德美德美德美德美德
-美德美德
-          </pre>
+您是貓咪的奴隸嗎?
+您知道每位奴隸每天都要在貓貓柔軟、溫暖的肚子中、背上、腳掌吸無數口嗎?
+現在就開始吸貓，加入貓奴的生活</pre>
         </div>
         <div class="bg_gm_w_01">
           <h3>
             吸貓是一種
           </h3>
-          <h1>美德</h1>
+          <h1>修養</h1>
           <pre>
-美德美德美德美德
-美德美德
-美德美德美德美德美德
-美德美德美德美德美德
-美德美德
-          </pre>
+根據沒有根據的說法，有修養的人之所以有修養，是因為他們每天吸貓。
+只要吸了貓，無論貓咪破壞多少家具，在床上留下多少嘔吐物，我們都不會生氣。</pre>
         </div>
       </div>
 
@@ -132,30 +132,16 @@
       <h1>貓咪紀錄片</h1>
 
       <div id="cards_ctn">
-        <div class="cards bg_gm_w_01">
-          <img src="./img/SoftNyanko/cover/NYAN-004.jpg" alt="">
-          <h4>特選乱れ猫撫で狂い弐拾連発特選乱れ猫撫で狂い弐拾連発特選乱れ猫撫で狂い弐拾連発</h4>
-        </div>
-        <div class="cards bg_gm_w_01">
-          <img src="./img/SoftNyanko/cover/NYAN-004.jpg" alt="">
-          <h4>特選乱れ猫撫で狂い弐拾連発</h4>
-        </div>
-        <div class="cards bg_gm_w_01">
-          <img src="./img/SoftNyanko/cover/NYAN-004.jpg" alt="">
-          <h4>特選乱れ猫撫で狂い弐拾連発</h4>
-        </div>
-        <div class="cards bg_gm_w_01">
-          <img src="./img/SoftNyanko/cover/NYAN-004.jpg" alt="">
-          <h4>特選乱れ猫撫で狂い弐拾連発</h4>
-        </div>
-        <div class="cards bg_gm_w_01">
-          <img src="./img/SoftNyanko/cover/NYAN-004.jpg" alt="">
-          <h4>特選乱れ猫撫で狂い弐拾連発</h4>
-        </div>
-        <div class="cards bg_gm_w_01">
-          <img src="./img/SoftNyanko/cover/NYAN-004.jpg" alt="">
-          <h4>特選乱れ猫撫で狂い弐拾連発</h4>
-        </div>
+        <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+
+          <a href="http://localhost/suckCatHouse/productInfo.php?id=<?=$row['productID'] ?>">
+            <div class="cards bg_gm_w_01">
+              <img src="<?= $row['imgPath'] ?>" alt="">
+              <h4><?= $row['pName'] ?></h4>
+            </div>
+          </a>
+
+        <?php endwhile ?>
       </div>
 
     </article>

@@ -1,3 +1,31 @@
+<?php
+if (isset($_POST['signUp'])) {
+
+    $link = mysqli_connect('localhost', 'root', '', 'suckcathouse', 3306);
+    $result = mysqli_query($link, 'set names utf8');
+
+    $sql = <<< aaa
+    insert into members
+    (email, pw, name, tel, address)
+    values
+    ('{$_POST['email']}', '{$_POST['pw']}', '{$_POST['name']}',
+    '{$_POST['tel']}','{$_POST['address']}'
+    )
+    aaa;
+    // ('{$_POST['email']}', '{$_POST['pw']}', '{$_POST['name']}',
+    // '{$_POST['tel']}','{$_POST['address']}'
+    // )
+
+    $result = mysqli_query($link, $sql);
+    header('location: index.php');
+    exit;
+}
+if(isset($_POST['cancel'])){
+header('location: index.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,9 +50,9 @@
         <h1>
             會員註冊
         </h1>
-        <form class="bg_gm_w_03" action="">
+        <form class="bg_gm_w_03" method="POST" action="">
             <label for="eMail">e-mail :</label>
-            <input class="bg_gm_w_03" id="eMail" name="eMail" type="text">
+            <input class="bg_gm_w_03" id="email" name="email" type="text">
             <br>
             <label for="pw">密碼 :</label>
             <input class="bg_gm_w_03" id="pw" name="pw" type="text">
@@ -36,14 +64,11 @@
             <input class="bg_gm_w_03" id="tel" name="tel" type="text">
             <br>
             <label for="address">地址 :</label>
-            <input class="bg_gm_w_03" id=""address name="address" type="text">
+            <input class="bg_gm_w_03" id="address" name="address" type="text">
             <br>
-            <input class="bg_gm_w_03" type="submit" value="確定註冊">
-
+            <input class="bg_gm_w_03" id="signUp" name="signUp" type="submit" value="確定註冊">
+            <input class="bg_gm_w_03" id="cancel" name="cancel" type="submit" value="取消">
         </form>
-
-
-
     </main>
 
 
