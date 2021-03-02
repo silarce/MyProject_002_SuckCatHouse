@@ -1,4 +1,12 @@
 <?php
+$order->name ="商品名稱";
+$order->price ="售價";
+$order->quantity ="數量";
+
+$order = json_encode($order);
+echo $order;
+
+
 $link = mysqli_connect('localhost', 'root', '', 'suckcathouse',3306);
 $result = mysqli_query($link, 'set names utf8');
 $id = $_GET['id'];
@@ -10,6 +18,10 @@ command;
 
 $result = mysqli_query($link, $sql);
 $row = mysqli_fetch_assoc($result);
+
+
+
+
 
 ?>
 
