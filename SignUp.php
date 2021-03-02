@@ -14,9 +14,6 @@ if (isset($_POST['signUp'])) {
     '{$_POST['tel']}','{$_POST['address']}'
     )
     aaa;
-    // ('{$_POST['email']}', '{$_POST['pw']}', '{$_POST['name']}',
-    // '{$_POST['tel']}','{$_POST['address']}'
-    // )
 
     $result = mysqli_query($link, $sql);
     header('location: ./index.php');
@@ -54,7 +51,7 @@ header('location: ./index.php');
         </h1>
         <form class="bg_gm_w_03" method="POST" action="">
             <label for="eMail">e-mail :</label>
-            <input class="bg_gm_w_03" id="email" name="email" type="text">
+            <input class="bg_gm_w_03" id="email" name="email" type="email">
             <br>
             <label for="pw">密碼 :</label>
             <input class="bg_gm_w_03" id="pw" name="pw" type="password">
@@ -69,7 +66,8 @@ header('location: ./index.php');
             <input class="bg_gm_w_03" id="address" name="address" type="text">
             <br>
             <input class="bg_gm_w_03" id="signUp" name="signUp" type="submit" value="確定註冊">
-            <input class="bg_gm_w_03" id="cancel" name="cancel" type="submit" value="取消">
+            <!-- <input class="bg_gm_w_03" id="cancel" name="cancel" type="submit" value="取消"> -->
+            <a id="cancel" class="bg_gm_w_03" href="./index.php">回首頁</a>
         </form>
     </main>
 

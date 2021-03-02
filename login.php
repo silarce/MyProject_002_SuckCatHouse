@@ -19,21 +19,21 @@ if (isset($_POST['login'])) {
     $row = mysqli_fetch_assoc($result);
 
     // 驗證密碼，正確即建立cookie
-    if (@$row['pw'] && $_POST['pw'] == $row['pw']) {
-        setcookie('houseMember', $row['name']);
-        header('location: ./index.php');
-        exit;
-    }else{
-        $wrong = 'wrong';
-    }
-    // if (password_verify($_POST['pw'], $row['pw'])) {
+    // if (@$row['pw'] && $_POST['pw'] == $row['pw']) {
     //     setcookie('houseMember', $row['name']);
     //     header('location: ./index.php');
     //     exit;
-    //     }else{
+    // }else{
     //     $wrong = 'wrong';
-    //     echo "wrongwrong";
     // }
+    if (password_verify($_POST['pw'], $row['pw'])) {
+        setcookie('houseMember', $row['name']);
+        header('location: ./index.php');
+        exit;
+        }else{
+        $wrong = 'wrong';
+        echo "wrongwrong";
+    }
 }
 
 // 登出
@@ -71,11 +71,11 @@ if (isset($_POST['cancel'])) {
 
 <body class="bg_brb_lg">
     <main class="bg_gm_w_03">
-        <h1>登入</h1>
+        <h1>會員頁面</h1>
         <form class="bg_gm_w_03" method="POST" action="">
         <?php if(@$wrong || $guestName == 'guest' ) {?>
             <label for="email">e-mail :</label>
-            <input class="bg_gm_w_03" id="email" name="email" type="text">
+            <input class="bg_gm_w_03" id="email" name="email" type="email">
             <br>
             <label for="pw">密碼 :</label>
             <input class="bg_gm_w_03" id="pw" name="pw" type="password">
@@ -86,7 +86,8 @@ if (isset($_POST['cancel'])) {
             <?php } else { ?>
                 <input class="bg_gm_w_03" type="submit" name="logout" id="logout" value="登出">
             <?php } ?>
-            <input class="bg_gm_w_03" type="submit" name="cancel" id="cancel" value="回首頁">
+            <!-- <input class="bg_gm_w_03" type="submit" name="cancel" id="cancel" value="回首頁"> -->
+            <a id="cancel" class="bg_gm_w_03" href="./index.php">回首頁</a>
             <br>
             <?php if(@$wrong) {?>
                 <h3>帳號或密碼錯誤，請查明後再輸入，謝謝</h3>
@@ -94,7 +95,9 @@ if (isset($_POST['cancel'])) {
                 <h3>歡迎蒞臨吸貓會館，請登入或註冊</h3>
                 <a id="signUp" class="bg_gm_w_03" href="./SignUp.php">註冊</a>
             <?php } else { ?>
-                <h3>歡迎蒞臨吸貓會館，<?= $guestName  ?></h3>
+                <h3>歡迎蒞臨吸貓會館，<?= $guestName  ?><br>你今天吸貓了嗎?</h3>
+                <br>
+                <a id="edit" class="bg_gm_w_03" href="./editMember.php">更改會員資料</a>
             <?php } ?>
 
           

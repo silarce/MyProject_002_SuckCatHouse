@@ -3,6 +3,8 @@
 $link = mysqli_connect('localhost', 'root', '', 'suckcathouse', 3306);
 $result = mysqli_query($link, 'set names utf8');
 
+
+
 $sql = <<<aaa
 SELECT * FROM `members`
 where name = '{$_COOKIE['houseMember']}'
@@ -12,12 +14,15 @@ $result = mysqli_query($link, $sql);
 $row = mysqli_fetch_assoc($result);
 // ----------------------------------------
 
+
 if(isset($_POST['signUp'])){
+    $hash = password_hash($_POST['pw'], PASSWORD_DEFAULT);
+
     $sql = <<< aaa
     UPDATE members
     set 
     email = '{$_POST['email']}',
-    pw = '{$_POST['pw']}',
+    pw = '$hash',
     name = '{$_POST['name']}',
     tel = '{$_POST['tel']}',
     address = '{$_POST['address']}'
@@ -25,7 +30,7 @@ if(isset($_POST['signUp'])){
     aaa;
 
     $result = mysqli_query($link, $sql);
-    header('location: ./editMember.php');
+    header('location: ./index.php');
 
 }
 
@@ -59,10 +64,10 @@ if(isset($_POST['signUp'])){
         </h1>
         <form class="bg_gm_w_03" method="POST" action="">
             <label for="eMail">e-mail :</label>
-            <input class="bg_gm_w_03" id="email" name="email" type="text" value="<?=$row['email']?>">
+            <input class="bg_gm_w_03" id="email" name="email" type="email" value="<?=$row['email']?>">
             <br>
-            <label for="pw">密碼 :</label>
-            <input class="bg_gm_w_03" id="pw" name="pw" type="password" value="<?=$row['pw']?>">
+            <label for="pw">新密碼 :</label>
+            <input class="bg_gm_w_03" id="pw" name="pw" type="password" value="<?=""?>">
             <br>
             <label for="name">姓名 :</label>
             <input class="bg_gm_w_03" id="name" name="name" type="text" value="<?=$row['name']?>">
@@ -74,7 +79,7 @@ if(isset($_POST['signUp'])){
             <input class="bg_gm_w_03" id="address" name="address" type="text" value="<?=$row['address']?>">
             <br>
             <input class="bg_gm_w_03" id="signUp" name="signUp" type="submit" value="確定修改">
-            <input class="bg_gm_w_03" id="cancel" name="cancel" type="submit" value="取消">
+            <a id="cancel" class="bg_gm_w_03" href="./index.php">取消回首頁</a>
         </form>
 
     </main>
