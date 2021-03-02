@@ -46,7 +46,7 @@ $result = mysqli_query($link, $sql);
                 <!-- --------一個卡片------------ -->
                 <?php while ($row = mysqli_fetch_assoc($result)) : ?>
 
-                    <a class="pdCard bg_gm_w_01" href="http://localhost/suckCatHouse/productInfo.php?id=<?= $row['productID']?>">
+                    <a class="pdCard bg_gm_w_01" href="./productInfo.php?id=<?= $row['productID']?>">
                         <h4 class="bg_gm_w_03"><?= $row['pName'] ?></h4>
                         <img class="cardImg" src="<?= $row['imgSamplePath'] ?>" alt="圖片路徑錯誤">
                         <div class="cardDesc">

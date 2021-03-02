@@ -134,7 +134,7 @@ $result = mysqli_query($link, $sql);
       <div id="cards_ctn">
         <?php while ($row = mysqli_fetch_assoc($result)) : ?>
 
-          <a href="http://localhost/suckCatHouse/productInfo.php?id=<?=$row['productID'] ?>">
+          <a href="./productInfo.php?id=<?=$row['productID'] ?>">
             <div class="cards bg_gm_w_01">
               <img src="<?= $row['imgPath'] ?>" alt="">
               <h4><?= $row['pName'] ?></h4>

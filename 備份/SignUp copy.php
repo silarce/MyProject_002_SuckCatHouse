@@ -4,13 +4,11 @@ if (isset($_POST['signUp'])) {
     $link = mysqli_connect('localhost', 'root', '', 'suckcathouse', 3306);
     $result = mysqli_query($link, 'set names utf8');
 
-    $hash = password_hash($_POST['pw'], PASSWORD_DEFAULT);
-
     $sql = <<< aaa
     insert into members
     (email, pw, name, tel, address)
     values
-    ('{$_POST['email']}', '$hash', '{$_POST['name']}',
+    ('{$_POST['email']}', '{$_POST['pw']}', '{$_POST['name']}',
     '{$_POST['tel']}','{$_POST['address']}'
     )
     aaa;

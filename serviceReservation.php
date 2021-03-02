@@ -23,7 +23,7 @@ if(isset($_POST['sendOut'])){
     aaa;
     $result = mysqli_query($link, $sql);
 
-    header('location: http://localhost/suckCatHouse/reservationOK.php');
+    header('location: ./reservationOK.php');
 }
 
 ?>

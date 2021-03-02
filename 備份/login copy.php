@@ -19,21 +19,21 @@ if (isset($_POST['login'])) {
     $row = mysqli_fetch_assoc($result);
 
     // 驗證密碼，正確即建立cookie
-    if (@$row['pw'] && $_POST['pw'] == $row['pw']) {
-        setcookie('houseMember', $row['name']);
-        header('location: ./index.php');
-        exit;
-    }else{
-        $wrong = 'wrong';
-    }
-    // if (password_verify($_POST['pw'], $row['pw'])) {
+    // if (@$row['pw'] && $_POST['pw'] == $row['pw']) {
     //     setcookie('houseMember', $row['name']);
     //     header('location: ./index.php');
     //     exit;
-    //     }else{
+    // }else{
     //     $wrong = 'wrong';
-    //     echo "wrongwrong";
     // }
+    if (password_verify($_POST['pw'], $row['pw'])) {
+        setcookie('houseMember', $row['name']);
+        header('location: ./index.php');
+        exit;
+        }else{
+        $wrong = 'wrong';
+        echo "wrongwrong";
+    }
 }
 
 // 登出
