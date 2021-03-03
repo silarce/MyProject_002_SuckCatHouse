@@ -1,13 +1,6 @@
 <?php
-$order->name ="商品名稱";
-$order->price ="售價";
-$order->quantity ="數量";
-
-$order = json_encode($order);
-echo $order;
-
-
-$link = mysqli_connect('localhost', 'root', '', 'suckcathouse',3306);
+// --------------------------
+$link = mysqli_connect('localhost', 'root', '', 'suckcathouse', 3306);
 $result = mysqli_query($link, 'set names utf8');
 $id = $_GET['id'];
 
@@ -19,10 +12,49 @@ command;
 $result = mysqli_query($link, $sql);
 $row = mysqli_fetch_assoc($result);
 
+// ---------------------------------
 
+if (isset($_POST['toCart'])) {
 
+    if (@$_COOKIE['order']) {
+        $arrjso = $_COOKIE['order'];
+        $arr = json_decode($arrjso, true);
+    }
 
+    $req = new newReq();
 
+    // $id已經在上半部抓到了
+    $req->productID = $id;
+    $req->price = $row['price'];
+    $req->quantity = $_POST['orderNum'];
+    $req->subtotal = $row['price'] * $_POST['orderNum'];
+
+    $jso = json_encode($req);
+    // echo $jso;
+
+    if (@$arr) {
+        $arr[$id] = $jso;
+    } else {
+        $arr = array($id => $jso);
+    }
+
+    $arrjso = json_encode($arr);
+    echo $arrjso;
+
+    // $jso = json_decode($jso);
+    // echo $jso->price;
+
+    setcookie('order', $arrjso);
+
+    // echo $arr[$id];
+}
+class newReq
+{
+    public  $productID;
+    public  $price;
+    public  $quantity;
+    public  $subtotal;
+}
 ?>
 
 
@@ -62,36 +94,36 @@ $row = mysqli_fetch_assoc($result);
                 </ul>
             </div>
             <div id="productImg" class="bg_gm_w_01">
-                <h5><?=$row['pNum']?></h5>
-                <h1><?=$row['pName']?></h1>
-                <img src="<?=$row['imgPath']?>" alt="">
-                <pre><?=$row['pDesc']?></pre>
+                <h5><?= $row['pNum'] ?></h5>
+                <h1><?= $row['pName'] ?></h1>
+                <img src="<?= $row['imgPath'] ?>" alt="">
+                <pre><?= $row['pDesc'] ?></pre>
             </div>
             <div>
                 <div id="productInfo">
                     <p>產品名稱 :</p>
-                    <p><?=$row['pName']?></p>
+                    <p><?= $row['pName'] ?></p>
 
                     <p>產品編號 :</p>
-                    <p><?=$row['pNum']?></p>
+                    <p><?= $row['pNum'] ?></p>
 
                     <p>發行公司 :</p>
-                    <p><?=$row['sup']?></p>
+                    <p><?= $row['sup'] ?></p>
 
                     <p>主要演員 :</p>
-                    <p><?=$row['actor']?></p>
+                    <p><?= $row['actor'] ?></p>
 
 
                 </div>
 
                 <div id="price">
-                    <p>售價 : <?=$row['price']?>元</p>
+                    <p>售價 : <?= $row['price'] ?>元</p>
                     <span>訂購 :</span>
-                    <form action="">
+                    <form method="POST" action="">
                         <div>
                             <div id="order">
                                 <div class="bg_gm_w_03"><i class="fas fa-minus"></i></div>
-                                <input class="bg_gm_w_03" id="orderNum" type="text" value="1">
+                                <input class="bg_gm_w_03" id="orderNum" name="orderNum" type="text" value="1">
                                 <div class="bg_gm_w_03"><i class="fas fa-plus"></i></div>
                             </div>
                         </div>
@@ -111,19 +143,18 @@ $row = mysqli_fetch_assoc($result);
 
         // let a = parseInt(oNum.value);
 
-        oAdd.addEventListener('click', function () {
+        oAdd.addEventListener('click', function() {
             let a = parseInt(oNum.value)
             a += 1
             oNum.value = a;
         });
-        oMinu.addEventListener('click', function () {
+        oMinu.addEventListener('click', function() {
             let a = parseInt(oNum.value)
             if (a > 1) {
                 a -= 1
                 oNum.value = a;
             }
         });
-
     </script>
 
 </body>

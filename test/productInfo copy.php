@@ -1,7 +1,6 @@
 <?php
-$link = mysqli_connect('localhost', 'root', '', 'suckcathouse', 3306);
+$link = mysqli_connect('localhost', 'root', '', 'suckcathouse',3306);
 $result = mysqli_query($link, 'set names utf8');
-
 $id = $_GET['id'];
 
 $sql = <<<command
@@ -11,47 +10,6 @@ command;
 
 $result = mysqli_query($link, $sql);
 $row = mysqli_fetch_assoc($result);
-// --------------------------------
-// 以下用於生產購物車COOKIE
-
-if (isset($_POST['toCart'])) {
-    // 如果餅乾cart存在，則先解碼餅乾的json
-    if (@$_COOKIE['cart']) {
-        $arrjso = $_COOKIE['cart'];
-        $arr = json_decode($arrjso, true);
-    }
-// --------------------------
-    // 建立物件
-    $req = new newReq();
-
-    // $id已經在上半部抓到了
-    $req->productID = $id;
-    $req->price = $row['price'];
-    $req->quantity = $_POST['orderNum'];
-    $req->subtotal = $row['price'] * $_POST['orderNum'];
-    // 將物件編碼為json
-    $jso = json_encode($req);
-
-    // 如果餅乾的arr存在，則將上面生出來的json放進該arr
-    // 否則就生一個arr
-    if (@$arr) {
-        $arr[$id] = $jso;
-    } else {
-        $arr = array($id => $jso);
-    }
-    // 將arr編碼為json
-    $arrjso = json_encode($arr);
-    // 將被編碼為json的arr存進餅乾
-    setcookie('cart', $arrjso);
-}
-// OOP模板
-class newReq
-{
-    public  $productID;
-    public  $price;
-    public  $quantity;
-    public  $subtotal;
-}
 
 ?>
 
@@ -92,36 +50,36 @@ class newReq
                 </ul>
             </div>
             <div id="productImg" class="bg_gm_w_01">
-                <h5><?= $row['pNum'] ?></h5>
-                <h1><?= $row['pName'] ?></h1>
-                <img src="<?= $row['imgPath'] ?>" alt="">
-                <pre><?= $row['pDesc'] ?></pre>
+                <h5><?=$row['pNum']?></h5>
+                <h1><?=$row['pName']?></h1>
+                <img src="<?=$row['imgPath']?>" alt="">
+                <pre><?=$row['pDesc']?></pre>
             </div>
             <div>
                 <div id="productInfo">
                     <p>產品名稱 :</p>
-                    <p><?= $row['pName'] ?></p>
+                    <p><?=$row['pName']?></p>
 
                     <p>產品編號 :</p>
-                    <p><?= $row['pNum'] ?></p>
+                    <p><?=$row['pNum']?></p>
 
                     <p>發行公司 :</p>
-                    <p><?= $row['sup'] ?></p>
+                    <p><?=$row['sup']?></p>
 
                     <p>主要演員 :</p>
-                    <p><?= $row['actor'] ?></p>
+                    <p><?=$row['actor']?></p>
 
 
                 </div>
 
                 <div id="price">
-                    <p>售價 : <?= $row['price'] ?>元</p>
+                    <p>售價 : <?=$row['price']?>元</p>
                     <span>訂購 :</span>
-                    <form method="POST" action="">
+                    <form action="">
                         <div>
                             <div id="order">
                                 <div class="bg_gm_w_03"><i class="fas fa-minus"></i></div>
-                                <input class="bg_gm_w_03" id="orderNum" name="orderNum" type="text" value="1">
+                                <input class="bg_gm_w_03" id="orderNum" type="text" value="1">
                                 <div class="bg_gm_w_03"><i class="fas fa-plus"></i></div>
                             </div>
                         </div>
@@ -141,18 +99,19 @@ class newReq
 
         // let a = parseInt(oNum.value);
 
-        oAdd.addEventListener('click', function() {
+        oAdd.addEventListener('click', function () {
             let a = parseInt(oNum.value)
             a += 1
             oNum.value = a;
         });
-        oMinu.addEventListener('click', function() {
+        oMinu.addEventListener('click', function () {
             let a = parseInt(oNum.value)
             if (a > 1) {
                 a -= 1
                 oNum.value = a;
             }
         });
+
     </script>
 
 </body>
