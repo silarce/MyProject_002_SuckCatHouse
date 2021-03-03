@@ -31,6 +31,27 @@ aaa;
 $result = mysqli_query($link, $sql);
 $row = mysqli_fetch_assoc($result);
 
+
+// 用foreach將陣列的key與值取出
+// 以key為變數名稱，將值decode賦值進該變數，也就是
+// $key = json_decode(值)
+// 這樣就能得到原本的物件
+
+// 再用
+// $result = mysqli_query($link, $sql);
+// $row = mysqli_fetch_assoc($result);
+// 提取圖片路徑
+
+// 然後再將物件的值與路徑代入
+// echo <<<aaa
+// HTML的碼
+// aaa;
+// 同時在每一次迭代時將小計合計為總金額，賦值進一個變數
+// 以上都在foreach內完成
+
+// 最後下訂單時要將原本的json與計算總金額的變數隨著訂單放進資料表
+
+
 ?>
 
 <!DOCTYPE html>
