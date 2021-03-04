@@ -12,19 +12,15 @@ command;
 $result = mysqli_query($link, $sql);
 $row = mysqli_fetch_assoc($result);
 // --------------------------------
-// 這個函式用於生產購物車COOKIE
-// 這個函式用於生產購物車COOKIE
+// 以下用於生產購物車COOKIE
 
-function foo1(){
-    global $id;
-    global $row;
-
-       // 如果餅乾cart存在，則先解碼餅乾的json
-       if (@$_COOKIE['cart']) {
+if (isset($_POST['toCart'])) {
+    // 如果餅乾cart存在，則先解碼餅乾的json
+    if (@$_COOKIE['cart']) {
         $arrjso = $_COOKIE['cart'];
         $arr = json_decode($arrjso, true);
     }
-    // --------------------------
+// --------------------------
     // 建立物件
     $req = new newReq();
 
@@ -48,17 +44,6 @@ function foo1(){
     // 將被編碼為json的arr存進餅乾
     setcookie('cart', $arrjso);
 }
-// 上面這個函式用於生產購物車COOKIE
-// --------------------
-
-if (isset($_POST['toCart'])) {
- foo1();
-}
-if (isset($_POST['toBuy'])) {
- foo1();
- header('location: ./cart.php');
-}
-
 // OOP模板
 class newReq
 {

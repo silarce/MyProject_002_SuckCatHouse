@@ -1,39 +1,56 @@
-   
-   main h1:nth-of-type(1){
-    margin-top: 30px;
+   main h1:nth-of-type(1) {
+       margin-top: 30px;
    }
-   #cartTitle{
+
+   #cartTitle {
        display: grid;
-       grid-template-columns: 2fr 4fr 2fr 2fr 2fr ;
-       margin-top:  20px;
+       grid-template-columns: 2fr 4fr 2fr 2fr 2fr;
+       margin-top: 20px;
    }
-   #cartTitle div{
-    padding-left: 10px;
-    font-size: 1.4rem;
+
+   #cartTitle div {
+       padding-left: 10px;
+       font-size: 1.4rem;
    }
-/* ------------------------ */
-   .cartList{
+
+   /* ------------------------ */
+
+   #cartEmpted {
+       margin: auto;
+       text-align: center;
+       margin: 50px 0 50px 0;
+   }
+   #orderDone{
+    margin: auto;
+       text-align: center;
+       margin: 50px 0 50px 0;
+}
+
+   .cartList {
        display: grid;
-       grid-template-columns: 2fr 4fr 2fr 2fr 2fr ;
-       border: 3px solid rgba( 255, 255, 255, 0.18 );
+       grid-template-columns: 2fr 4fr 2fr 2fr 2fr;
+       border: 3px solid rgba( 255, 255, 255, 0.18);
        height: 150px;
    }
-   .cartList div{
-    padding-left: 10px;
-    line-height: 150px ;
-    font-size: 1.4rem;
-}
-.cartList img{
-    /* text-align: center;
+
+   .cartList div {
+       padding-left: 10px;
+       line-height: 150px;
+       font-size: 1.4rem;
+   }
+
+   .cartList img {
+       /* text-align: center;
     line-height: 150px ; */
-    padding: 5px;
+       padding: 5px;
        width: 100%;
    }
 
-   .cartList div:nth-of-type(1){
+   .cartList div:nth-of-type(1) {
        position: relative;
    }
-   .cartList div p{
+
+   .cartList div p {
        line-height: initial;
        height: fit-content;
        position: absolute;
@@ -43,24 +60,54 @@
        right: 0;
        margin: auto;
    }
-   main h2:nth-of-type(1){
+
+   main h2:nth-of-type(1) {
        text-align: end;
        margin-right: 110px;
-       margin-top:10px ;
+       margin-top: 10px;
        margin-bottom: 30px;
    }
-   form{
+ 
+
+   form {
        margin-left: 10px;
-       margin-top:10px ;
+       margin-top: 10px;
    }
-   form label{
+
+   form label {
        font-size: 1.4rem;
        color: var(--textColor);
    }
- #cancel{
-     font-size: 2rem;
-     text-decoration: none;
-     color: black;
-     text-align: end;
-     margin-left: 950px;
- }
+
+   #toOrder {
+    padding: 5px;
+       font-size: 2rem;
+       text-decoration: none;
+       color: pink;
+       margin-top: 30px;
+       margin-left: 30px;
+   }
+
+   #continueBuy {
+       padding: 5px;
+       font-size: 2rem;
+       text-decoration: none;
+       color: black;
+       display: inline-block;
+   }
+   #toIndex {
+    padding: 5px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: black;
+    margin-left: 770px;
+    display: inline-block;
+}
+   #emptyCart{
+    padding: 5px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: black;
+    margin-left: 550px;
+    display: inline-block;  
+   }
