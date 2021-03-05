@@ -122,10 +122,12 @@ if (isset($_POST['emptyCart'])) {
             <div>$key->quantity</div>
             <div>$key->subtotal</div>
         </div>
-        <h2>總金額&nbsp&nbsp&nbspNT&nbsp<?= @$total ?></h2>
 aaa;
             }
-        } elseif ($_GET['id']) {
+            echo <<< aaa
+            <h2>總金額&nbsp&nbsp&nbspNT&nbsp$total</h2>
+aaa;
+        } elseif (@$_GET['id']) {
             $id = $_GET['id'];
             echo "<h3 id='orderDone'>訂單已完成，您的訂單號碼為$id</h3>";
         } else {
